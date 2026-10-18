@@ -1,0 +1,29 @@
+
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
+
+# Env
+.env
+.env.example
+
+# Claude Code
+.claude/
+
+# Docs
+docs/
+
+# Playwright MCP (snapshots, screenshots e logs da exploração)
+.playwright-mcp/
+
+# Allure
+/allure-results/
+/allure-report/
+allure-history.jsonl
+
+# MCP (configuração local)
+.mcp.json
