@@ -25,7 +25,8 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
-    ['list'],
+    /* No CI, o reporter `github` anota as falhas direto no commit/PR. */
+    process.env.CI ? ['github'] : ['list'],
     /* Não abre sozinho ao final: use `npm run report` (é onde o trace abre direto no navegador). */
     ['html', { open: 'never' }],
     ['allure-playwright', { resultsDir: 'allure-results' }],

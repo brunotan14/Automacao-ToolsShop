@@ -4,6 +4,7 @@
 
 **Testes E2E do [Practice Software Testing — Toolshop](https://practicesoftwaretesting.com) com Playwright + TypeScript**
 
+[![E2E Tests](https://github.com/brunotan14/Automacao-ToolsShop/actions/workflows/e2e.yml/badge.svg)](https://github.com/brunotan14/Automacao-ToolsShop/actions/workflows/e2e.yml)
 [![Playwright](https://img.shields.io/badge/Playwright-1.64-2EAD33?logo=playwright&logoColor=white)](https://playwright.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-6.0-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![Node.js](https://img.shields.io/badge/Node.js-24-339933?logo=nodedotjs&logoColor=white)](https://nodejs.org)
@@ -79,6 +80,15 @@ Para rodar um teste específico:
 ```bash
 npx playwright test -g "CT06"
 ```
+
+---
+
+## ⚙️ CI — GitHub Actions
+
+A cada merge na `main`, o workflow [`e2e.yml`](.github/workflows/e2e.yml) roda duas etapas. Também é possível rodá-lo manualmente pela aba **Actions**.
+
+1. **Lint, Typecheck & Format:** ESLint sem nenhum warning permitido, `tsc` e Prettier. Se esta etapa falhar, o E2E nem começa.
+2. **Playwright E2E:** roda a suíte no Google Chrome headless, com retries, e publica como artefatos o relatório do Playwright, o relatório Allure (com histórico entre runs) e, se houver falha, os traces, screenshots e vídeos.
 
 ---
 
